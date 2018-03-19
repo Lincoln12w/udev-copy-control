@@ -32,10 +32,14 @@ Just run the shell `setup.sh`.
   - BUG 002 fixed. Add check `if device is disk or USB`, NOT let udev take control of mounting disks!
   - BUG 003 fixed. Catch those device who doesn't have partion (`sd[b-z]`),
                    skip device `sd[b-z]` when device `sd[b-z][0-9]` existed,
-                   check if the mount point exist when perform remove for device `sd[b-z]`.   
+                   check if the mount point exist when perform remove for device `sd[b-z]`.
   - BUG 004 fixed. For consistency mount point `/media/usb/sd[a-z]*/LABEL`,
-                   create a label "NONAME" for device which doesn't have a LABEL.   
+                   create a label "NONAME" for device which doesn't have a LABEL.
   - BUG 005 fixed. Check if the device is manually umounted before use `fuser -km` to kill the processings.
+- v1.3 - 20180319
+
+  - BUG 006 fixed. Check if there are blanks in device LABEL.
+  - Add `sudo /etc/init.d/udev restart` in `setup.sh` to activate the settings.
 
 ## Known Issues
 
