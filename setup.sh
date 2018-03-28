@@ -7,5 +7,5 @@
 
 sudo cp 10-udev-copy-control.rules /etc/udev/rules.d
 sudo mkdir -p /utils/
-sudo cp addusbdev.sh rmusbdev.sh /utils/
+sudo cp addUSBDev.sh rmUSBDev.sh /utils/
 sudo /etc/init.d/udev restart
