@@ -12,5 +12,5 @@
 # 01a 11may17 lzw Fiexs BUG 003.
 
 KERNEL=="sd[b-z]", NAME="%k", SYMLINK="udisk", GROUP="root", OPTIONS="last_rule"
-ACTION=="add", KERNEL=="sd[b-z]*", RUN+="/bin/sh /utils/addUSBDev.sh %k", OPTIONS="last_rule"
-ACTION=="remove", KERNEL=="sd[b-z]*", RUN+="/bin/sh /utils/rmUSBDev.sh %k", OPTIONS="last_rule"
+ACTION=="add", KERNEL=="sd[b-z]*", RUN+="/bin/bash /utils/addUSBDev.sh %k", OPTIONS="last_rule"
+ACTION=="remove", KERNEL=="sd[b-z]*", RUN+="/bin/bash /utils/rmUSBDev.sh %k", OPTIONS="last_rule"
