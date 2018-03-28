@@ -10,7 +10,6 @@
 #                   do mount options here.
 # 01a 11may17 lzw Fixes BUG-003,005, add logs.
 # 01b 19mar18 lzw Fixes BUG-006.
-# 01c 20mar18 lzw Fixed BUG-007, mount with `iocharset=utf8` option to support Chinese.
 
 dev="$1"
 dev="${dev%%[0-9]*}"
@@ -50,7 +49,7 @@ if [[ "${removable}" = "1" ]]; then
   fi
 
   # mount the usb device on /media/usb/
-  mount -t auto -o dmask=022,iocharset=utf8 "/dev/$1" "/media/usb/$1/${str}"
+  mount -t auto -o dmask=022 "/dev/$1" "/media/usb/$1/${str}"
   if [[ "$?" -ne 0 ]]; then
     echo "Unable to mount /media/usb/$1/${str}" >> /utils/logs
     exit

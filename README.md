@@ -41,12 +41,6 @@ Just run the shell `setup.sh`.
   - BUG 006 fixed. Check if there are blanks in device LABEL.
   - Add `sudo /etc/init.d/udev restart` in `setup.sh` to activate the settings.
 
-- v1.4 - 20180320
-  
-  - BUG 007 fixed. Add `chinese` support for USB mount.
-
 ## Known Issues
 
 Cause `/sys/block/sdx/removable` is used to indicate the device is an USB or not, and this script will only take control the USB device, mobile HDD will not be controlled currently.
-
-In Ubuntu 17.10, however the `udev` might activate before reading the self-made rules, thus the service need to be restarted after __reboot__ or __power on__ to activate the self-made configurations. `sudo /etc/init.d/udev restart`
