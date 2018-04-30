@@ -8,6 +8,7 @@
 # 00a 29mar17 lzw create
 # 00b 29mar17 lzw Fixes BUG-001
 # 01a 11may17 lzw Fixes BUG-002,003,004, add logs.
+# 01b 29mar18 lzw Explicitly get the return value for `umount` command. '$?' works wired sometimes (.iso image).
 
 # Check if the device is mounted.
 if [[ -d "/media/usb/$1" ]]; then
@@ -24,8 +25,8 @@ if [[ -d "/media/usb/$1" ]]; then
   fi
 
   # umount the device
-  umount "/media/usb/$1/"*
-  if [[ "$?" -ne 0 ]]; then
+  ret=$(umount "/media/usb/$1/"*)
+  if [[ "${ret}" -ne 0 ]]; then
     echo "Unable to umount" "/media/usb/$1/"* >> /utils/logs
     exit
   fi

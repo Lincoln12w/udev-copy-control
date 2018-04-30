@@ -43,7 +43,7 @@ Just run the shell `setup.sh`.
 
 - v1.4 - 20180320
   
-  - BUG 007 fixed. Add `chinese` support for USB mount.
+  - Add `chinese` support for USB mount.
 
 ## Known Issues
 
